@@ -18,7 +18,7 @@
   font-weight: 400;
   font-family: "Kumbh Sans", sans-serif;
   color: rgba(255, 255, 255, 0.87);
-  
+
   /* ## Colors */
 
   /* ### Primary */
@@ -54,7 +54,6 @@ button:hover {
   max-width: 1110px;
 }
 
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -73,17 +72,14 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-  /*   height: 100vh; */
+    /*   height: 100vh; */
   }
 
   .cartWrapper {
     display: block;
     position: relative;
-    background: black;
+    background: transparent;
     width: 100%;
-    background-color: var(--White);
-    border-radius: 8px;
     max-width: 550px;
-    box-shadow: 0px 15px 21px 0px rgba(0,0,0,0.1);
   }
 }
