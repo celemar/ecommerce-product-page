@@ -1,0 +1,17 @@
+const sidenav = document.querySelector('#sidenav-open');
+
+sidenav.addEventListener('keyup', event => {
+  if (event.code === 'Escape') document.location.hash = '';
+});
+
+<a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu" onchange="history.go(-1)"></a>
+
+https://web.dev/articles/building/a-sidenav-component?hl=pt-br
+
+sidenav.addEventListener('transitionend', e => {
+  const isOpen = document.location.hash === '#sidenav-open';
+
+  isOpen
+      ? document.querySelector('#sidenav-close').focus()
+      : document.querySelector('#sidenav-button').focus();
+})

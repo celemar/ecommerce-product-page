@@ -1,0 +1,162 @@
+.image-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-image {
+  width: 100%;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: var(--White);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}
+
+.prev-button {
+  left: 0.8em;
+}
+
+.next-button {
+  right: 0.8em;
+}
+
+.arrow-icon {
+  width: 10px;
+  height: auto;
+}
+
+.thumbnails-container {
+  display: none;
+}
+
+.lightbox-carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.carousel-wrapper {
+  position: relative;
+}
+
+.close-lightbox {
+  position: absolute;
+  border: none;
+  background-color: transparent;  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  z-index: 5000;
+  top: -7%;
+  left: 97%;
+  transform: scale(1.5);
+}
+
+.closeIcon {
+  fill: var(--White);
+}
+
+.close-lightbox:hover .closeIcon {
+  fill: var(--Orange);
+}
+
+.thumbnail.selected {
+  border: solid 2.5px var(--Orange);
+  opacity: 50%;
+}
+
+@media screen and (max-width: 425px) {
+  .image-carousel {
+    max-height: 375px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-image {
+    border-radius: 1em;
+    width: 100%;
+  }
+
+  .carousel-wrapper > img {
+    max-width: 600px;
+  }
+
+  .thumbnails-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.5em;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+
+  .thumbnail {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 0.5em;
+    flex-grow: 1;
+  }
+
+  .thumbnail:hover {
+    opacity: 50%;
+  }
+
+  .prev-button {
+    left: -1.8em;
+  }
+  .next-button {
+    right: -1.8em;
+  }
+
+  .prev-button,
+  .next-button {
+    display: none;
+  }
+
+  .lightbox-open .prev-button,
+  .lightbox-open .next-button {
+    display: flex;
+    width: 55px;
+    height: 55px;
+  }
+
+  .lightbox-open .prev-button:hover .arrow-icon,
+  .lightbox-open .next-button:hover .arrow-icon {
+    filter: invert(59%) sepia(77%) saturate(2324%) hue-rotate(344deg) brightness(101%) contrast(102%);
+  }
+  
+  .lightbox-open .arrow-icon {
+    scale: 1.2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .thumbnails-container {
+    gap: 2em;
+  }
+}
