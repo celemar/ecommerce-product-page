@@ -1,8 +1,7 @@
 .cart-container {
   display: block;
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 35%;
   transform: translate(-50%, -50%);
   width: 96%;
   color: black;
